@@ -21,6 +21,12 @@
 		DD610FC5291A8A4200B9D538 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD610FC4291A8A4200B9D538 /* LoginCoordinator.swift */; };
 		DD610FC8291A8D7C00B9D538 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD610FC7291A8D7C00B9D538 /* LoginViewController.swift */; };
 		DD610FCA291A8DD000B9D538 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD610FC9291A8DD000B9D538 /* LoginView.swift */; };
+		DDFCABD8292666DF00BEE972 /* UIcolor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABD7292666DF00BEE972 /* UIcolor+.swift */; };
+		DDFCABDB2926717400BEE972 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABDA2926717400BEE972 /* ButtonDefault.swift */; };
+		DDFCABDD292674EF00BEE972 /* SenhaDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABDC292674EF00BEE972 /* SenhaDefault.swift */; };
+		DDFCABDF292675C100BEE972 /* EmailDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABDE292675C100BEE972 /* EmailDefault.swift */; };
+		DDFCABE12926765800BEE972 /* LabelDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABE02926765800BEE972 /* LabelDefault.swift */; };
+		DDFCABE32926797300BEE972 /* ImageDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABE22926797300BEE972 /* ImageDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +65,12 @@
 		DD610FC4291A8A4200B9D538 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		DD610FC7291A8D7C00B9D538 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD610FC9291A8DD000B9D538 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DDFCABD7292666DF00BEE972 /* UIcolor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+.swift"; sourceTree = "<group>"; };
+		DDFCABDA2926717400BEE972 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
+		DDFCABDC292674EF00BEE972 /* SenhaDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenhaDefault.swift; sourceTree = "<group>"; };
+		DDFCABDE292675C100BEE972 /* EmailDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDefault.swift; sourceTree = "<group>"; };
+		DDFCABE02926765800BEE972 /* LabelDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelDefault.swift; sourceTree = "<group>"; };
+		DDFCABE22926797300BEE972 /* ImageDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +121,7 @@
 		41239E8928F840EA00D92C31 /* AppNotifica */ = {
 			isa = PBXGroup;
 			children = (
-				DD610FC6291A8D1000B9D538 /* Controller */,
-				DD610FC1291A895F00B9D538 /* Coordinator */,
+				DDFCABD52926647B00BEE972 /* Source */,
 				DD610FC0291A85D600B9D538 /* Resource */,
 				41239E9B28F840ED00D92C31 /* Info.plist */,
 			);
@@ -164,6 +175,37 @@
 				DD610FC7291A8D7C00B9D538 /* LoginViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DDFCABD52926647B00BEE972 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DDFCABD9292670BE00BEE972 /* Infrastructure */,
+				DDFCABD62926668000BEE972 /* Extentions */,
+				DD610FC1291A895F00B9D538 /* Coordinator */,
+				DD610FC6291A8D1000B9D538 /* Controller */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DDFCABD62926668000BEE972 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				DDFCABD7292666DF00BEE972 /* UIcolor+.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		DDFCABD9292670BE00BEE972 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				DDFCABDA2926717400BEE972 /* ButtonDefault.swift */,
+				DDFCABDC292674EF00BEE972 /* SenhaDefault.swift */,
+				DDFCABDE292675C100BEE972 /* EmailDefault.swift */,
+				DDFCABE02926765800BEE972 /* LabelDefault.swift */,
+				DDFCABE22926797300BEE972 /* ImageDefault.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,12 +340,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD610FC8291A8D7C00B9D538 /* LoginViewController.swift in Sources */,
+				DDFCABE12926765800BEE972 /* LabelDefault.swift in Sources */,
 				DD610FC5291A8A4200B9D538 /* LoginCoordinator.swift in Sources */,
+				DDFCABE32926797300BEE972 /* ImageDefault.swift in Sources */,
 				41239E8F28F840EA00D92C31 /* ViewController.swift in Sources */,
 				41239E8B28F840EA00D92C31 /* AppDelegate.swift in Sources */,
+				DDFCABDD292674EF00BEE972 /* SenhaDefault.swift in Sources */,
 				DD610FC3291A89F300B9D538 /* Coordinator.swift in Sources */,
+				DDFCABDF292675C100BEE972 /* EmailDefault.swift in Sources */,
 				41239E9528F840EB00D92C31 /* AppNotifica.xcdatamodeld in Sources */,
 				DD610FCA291A8DD000B9D538 /* LoginView.swift in Sources */,
+				DDFCABDB2926717400BEE972 /* ButtonDefault.swift in Sources */,
+				DDFCABD8292666DF00BEE972 /* UIcolor+.swift in Sources */,
 				41239E8D28F840EA00D92C31 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
