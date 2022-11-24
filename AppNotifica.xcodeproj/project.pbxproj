@@ -24,6 +24,10 @@
 		DD610FC5291A8A4200B9D538 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD610FC4291A8A4200B9D538 /* LoginCoordinator.swift */; };
 		DD610FC8291A8D7C00B9D538 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD610FC7291A8D7C00B9D538 /* LoginViewController.swift */; };
 		DD610FCA291A8DD000B9D538 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD610FC9291A8DD000B9D538 /* LoginView.swift */; };
+		DD91F6EF292FA68600756969 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91F6EE292FA68600756969 /* HomeViewController.swift */; };
+		DD91F6F1292FA6AD00756969 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91F6F0292FA6AD00756969 /* HomeView.swift */; };
+		DD91F6F3292FA6BB00756969 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91F6F2292FA6BB00756969 /* HomeCoordinator.swift */; };
+		DD91F6F5292FB80A00756969 /* ViewControllerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91F6F4292FB80A00756969 /* ViewControllerDefault.swift */; };
 		DDFCABD8292666DF00BEE972 /* UIcolor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABD7292666DF00BEE972 /* UIcolor+.swift */; };
 		DDFCABDB2926717400BEE972 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABDA2926717400BEE972 /* ButtonDefault.swift */; };
 		DDFCABDD292674EF00BEE972 /* SenhaDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABDC292674EF00BEE972 /* SenhaDefault.swift */; };
@@ -71,6 +75,10 @@
 		DD610FC4291A8A4200B9D538 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		DD610FC7291A8D7C00B9D538 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DD610FC9291A8DD000B9D538 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		DD91F6EE292FA68600756969 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DD91F6F0292FA6AD00756969 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DD91F6F2292FA6BB00756969 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		DD91F6F4292FB80A00756969 /* ViewControllerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDefault.swift; sourceTree = "<group>"; };
 		DDFCABD7292666DF00BEE972 /* UIcolor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+.swift"; sourceTree = "<group>"; };
 		DDFCABDA2926717400BEE972 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		DDFCABDC292674EF00BEE972 /* SenhaDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenhaDefault.swift; sourceTree = "<group>"; };
@@ -189,6 +197,7 @@
 				DD610FC2291A89F300B9D538 /* Coordinator.swift */,
 				DD610FC4291A8A4200B9D538 /* LoginCoordinator.swift */,
 				DD4C6678292F96BC00F44862 /* RegisterCoordinator.swift */,
+				DD91F6F2292FA6BB00756969 /* HomeCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -196,10 +205,20 @@
 		DD610FC6291A8D1000B9D538 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DD91F6EB292FA5F100756969 /* Home */,
 				DD4C6673292F967200F44862 /* Register */,
 				DD4C6672292F965000F44862 /* Login */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DD91F6EB292FA5F100756969 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DD91F6F0292FA6AD00756969 /* HomeView.swift */,
+				DD91F6EE292FA68600756969 /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		DDFCABD52926647B00BEE972 /* Source */ = {
@@ -229,6 +248,7 @@
 				DDFCABDE292675C100BEE972 /* EmailDefault.swift */,
 				DDFCABE02926765800BEE972 /* LabelDefault.swift */,
 				DDFCABE22926797300BEE972 /* ImageDefault.swift */,
+				DD91F6F4292FB80A00756969 /* ViewControllerDefault.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -366,6 +386,7 @@
 			files = (
 				DD610FC8291A8D7C00B9D538 /* LoginViewController.swift in Sources */,
 				DDFCABE12926765800BEE972 /* LabelDefault.swift in Sources */,
+				DD91F6EF292FA68600756969 /* HomeViewController.swift in Sources */,
 				DD610FC5291A8A4200B9D538 /* LoginCoordinator.swift in Sources */,
 				DDFCABE32926797300BEE972 /* ImageDefault.swift in Sources */,
 				41239E8F28F840EA00D92C31 /* ViewController.swift in Sources */,
@@ -380,7 +401,10 @@
 				DD610FCA291A8DD000B9D538 /* LoginView.swift in Sources */,
 				DDFCABDB2926717400BEE972 /* ButtonDefault.swift in Sources */,
 				DDFCABD8292666DF00BEE972 /* UIcolor+.swift in Sources */,
+				DD91F6F3292FA6BB00756969 /* HomeCoordinator.swift in Sources */,
 				41239E8D28F840EA00D92C31 /* SceneDelegate.swift in Sources */,
+				DD91F6F5292FB80A00756969 /* ViewControllerDefault.swift in Sources */,
+				DD91F6F1292FA6AD00756969 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,13 +19,14 @@ class LoginView: UIView {
             
         }
     
-    var unregisterTop: (() -> Void)?
+    var onregisterTap: (() -> Void)?
+    var onLoginTap: (()-> Void)?
     //cria a função com as propriadades da imagem no login
     var imageLogin = ImageDefault(image: "ImageLogin")
     
     //cria a função com as propriadades da label no login
-    var imageLabel = LabelDefault(imageLabel:"Registre e gerencie as ocorreências do seu IF"), font: UIFont.systemFont = (ofSize: 16, widght: .regular)
-   
+    var imageLabel = LabelDefault(imageLabel:"Registre e gerencie as ocorreências do seu IF", font: UIFont.systemFont(ofSize: 17, weight: .regular))
+    
     //cria a função com as propriadades da text no login
     var emailTextField = EmailDefault(email:"E-mail")
    
@@ -38,7 +39,7 @@ class LoginView: UIView {
     //cria a função com as propriadades do botão registrar
     var buttonRegistrar = ButtonDefault(botao: "Registrar")
     
-    buttonRegistrar.addTarget(self, action: selector (registerTap),for: .TouchInside)NSLayOutConstraint.activate()
+   
      
     
     
@@ -49,6 +50,11 @@ class LoginView: UIView {
         self.addSubview(senhaTextField)
         self.addSubview(buttonLogar)
         self.addSubview(buttonRegistrar)
+        
+        buttonRegistrar.addTarget(self, action: #selector(registerTap), for: .touchUpInside)
+        
+        buttonLogar.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
+        
         
         NSLayoutConstraint.activate([
         
@@ -95,7 +101,11 @@ class LoginView: UIView {
     }
     
 }
-
-object private func registerTop() {
-    unRegisterTap()
+@objc
+private func registerTap(){
+    onRegisterTap()
+}
+@objc
+private func loginTap(){
+    onLoginTap?()
 }

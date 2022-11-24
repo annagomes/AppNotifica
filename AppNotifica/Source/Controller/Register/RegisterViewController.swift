@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: viewControllerDefault {
     
     var viewMain = RegisterView()
     //override é sobrescrever, ou seja, já tem um jeito padrão de funcionar, mas deseja poder configurar isso
@@ -19,6 +19,5 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         //super se refere a classe-mãe (view controller), é uma maneira de aproveitar o código da classe-mãe e continuar editando mais códigos
         self.title = "Registrar"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

@@ -8,18 +8,24 @@
 import Foundation
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: viewControllerDefault {
     
     var unRegisterTap: (() -> Void)?
     
-    var loginView; loginView = {
+    var loginView: loginView = {
         let loginView = loginView()
-        loginView.unRegisterTap = (self.unRegisterTap?())
+        loginView.onregisterTap = {
+            self.loginView.onregisterTap?()
+        }
+        
+        loginView.onLoginTap = {
+            self.onLoginTap?()
+        }
+        
         return loginView
     }()
     
-    var loginView = LoginView()
-    //override é sobrescrever, ou seja, já tem um jeito padrão de funcionar, mas deseja poder configurar isso
+  
     override func loadView() {
         self.view = loginView
     }
@@ -27,7 +33,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         //super se refere a classe-mãe (view controller), é uma maneira de aproveitar o código da classe-mãe e continuar editando mais códigos
         self.title = "Entrar"
-        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 

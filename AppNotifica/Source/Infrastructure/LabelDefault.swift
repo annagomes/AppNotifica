@@ -18,7 +18,7 @@ class LabelDefault: UILabel {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    private func initDefault (imageLabel: String, font: Font){
+    private func initDefault (imageLabel: String, font: UIFont){
         self.textColor = .labelColor
         self.adjustsFontSizeToFitWidth = true
         self.font = font
