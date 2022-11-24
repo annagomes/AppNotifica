@@ -18,11 +18,13 @@ class LoginView: UIView {
             setupVisualElements()
             
         }
+    
+    var unregisterTop: (() -> Void)?
     //cria a função com as propriadades da imagem no login
     var imageLogin = ImageDefault(image: "ImageLogin")
     
     //cria a função com as propriadades da label no login
-    var imageLabel = LabelDefault(imageLabel:"Registre e gerencie as ocorreências do seu IF" )
+    var imageLabel = LabelDefault(imageLabel:"Registre e gerencie as ocorreências do seu IF"), font: UIFont.systemFont = (ofSize: 16, widght: .regular)
    
     //cria a função com as propriadades da text no login
     var emailTextField = EmailDefault(email:"E-mail")
@@ -35,6 +37,8 @@ class LoginView: UIView {
    
     //cria a função com as propriadades do botão registrar
     var buttonRegistrar = ButtonDefault(botao: "Registrar")
+    
+    buttonRegistrar.addTarget(self, action: selector (registerTap),for: .TouchInside)NSLayOutConstraint.activate()
      
     
     
@@ -90,4 +94,8 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+}
+
+object private func registerTop() {
+    unRegisterTap()
 }

@@ -10,10 +10,18 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var viewMain = LoginView()
+    var unRegisterTap: (() -> Void)?
+    
+    var loginView; loginView = {
+        let loginView = loginView()
+        loginView.unRegisterTap = (self.unRegisterTap?())
+        return loginView
+    }()
+    
+    var loginView = LoginView()
     //override é sobrescrever, ou seja, já tem um jeito padrão de funcionar, mas deseja poder configurar isso
     override func loadView() {
-        self.view = viewMain
+        self.view = loginView
     }
     override func viewDidLoad(){
         super.viewDidLoad()

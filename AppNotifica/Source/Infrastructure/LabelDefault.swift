@@ -10,17 +10,18 @@ import UIKit
 
 class LabelDefault: UILabel {
     
-    init(imageLabel: String ){
+    init(imageLabel: String, font: UIFont ){
         super.init(frame: .zero)
-        initDefault(imageLabel: imageLabel)
+        initDefault(imageLabel: imageLabel, font: font)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    private func initDefault (imageLabel: String){
+    private func initDefault (imageLabel: String, font: Font){
         self.textColor = .labelColor
-        self.font = UIFont(name: "SFProDisplay-Light", size: 16)
+        self.adjustsFontSizeToFitWidth = true
+        self.font = font
         self.text = "Registre e gerencie as ocorrências do seu IF"
         self.translatesAutoresizingMaskIntoConstraints = false
     }

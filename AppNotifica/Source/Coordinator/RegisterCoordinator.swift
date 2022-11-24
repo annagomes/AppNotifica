@@ -1,13 +1,13 @@
 //
-//  LoginCoordinator.swift
+//  RegisterCoordinator.swift
 //  AppNotifica
 //
-//  Created by IFB BIOTIC 20 on 08/11/22.
+//  Created by IFB BIOTIC 20 on 24/11/22.
 //
 
 import Foundation
 import UIKit
-class LoginCoordinator: Coordinator {
+class RegisterCoordinator: Coordinator {
     //os dois pontos indicam que a classe a classe irá implementar o protocolo. Necessita ter a função para que não dê erro
     
     var navigationController: UINavigationController
@@ -18,14 +18,7 @@ class LoginCoordinator: Coordinator {
     
     func start() {
     //chama o loginViewController
-        let viewController = LoginViewController()
+        let viewController = RegisterViewController()
         self.navigationController.pushViewController(viewController, animated: true)
     }
-}
-viewController.unRegisterTap = {
-    self.getsRegister()
-}
-func goToRegister(){
-    let coordinator = RegisterCoordinator(navigationController: navigationController)
-    coordinator.start()
 }
