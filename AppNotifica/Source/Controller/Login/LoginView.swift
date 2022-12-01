@@ -8,42 +8,44 @@
 import Foundation
 import UIKit
 
-class LoginView: UIView {
-    //MARK: - Initialize
-        override init(frame: CGRect) {
-            //chama o frame da superclasse
-            super.init(frame: frame)
-            // muda a cor de fundo do app para branco
-            self.backgroundColor = .viewBackGroundColor
-            setupVisualElements()
-            
-        }
+class LoginView: ViewDefault {
     
-    var onregisterTap: (() -> Void)?
-    var onLoginTap: (()-> Void)?
-    //cria a função com as propriadades da imagem no login
+    
+  
+  var onRegisterTap: (() -> Void)?
+  var onLoginTap: (() -> Void)?
+    
+   
     var imageLogin = ImageDefault(image: "ImageLogin")
+       
     
-    //cria a função com as propriadades da label no login
-    var imageLabel = LabelDefault(imageLabel:"Registre e gerencie as ocorreências do seu IF", font: UIFont.systemFont(ofSize: 17, weight: .regular))
-    
-    //cria a função com as propriadades da text no login
-    var emailTextField = EmailDefault(email:"E-mail")
-   
-    //cria a função com as propriadades da text no login
-    var senhaTextField = SenhaDefault(senha:"Senha")
-   
-    //cria a função com as propriadades da butao no logor
-    var buttonLogar = ButtonDefault(botao:"Logar")
-   
-    //cria a função com as propriadades do botão registrar
-    var buttonRegistrar = ButtonDefault(botao: "Registrar")
-    
-   
-     
+    var imageLabel = LabelDefault(text: "Registre e gerencie as ocorrências do seu IF", font: UIFont.systemFont(ofSize: 17, weight: .regular))
     
     
-    func setupVisualElements() {
+    var emailTextField = TextFieldDefault (placeholder: "E-mail", keyBordType: .emailAddress, returnKeyType: .next)
+    
+    
+    var senhaTextField : TextFieldDefault  = {
+        let text = TextFieldDefault(placeholder: "Senha", keyBordType: .emailAddress, returnKeyType: .done)
+        
+        text.isSecureTextEntry = true;
+        
+        return text
+         }()
+    
+    
+    var buttonLogar = ButtonDefault(botao: "LOGAR")
+    
+    
+    var buttonRegistrar = ButtonDefault(botao: "REGISTRAR")
+        
+    
+    override func setupVisualElements() {
+        super.setupVisualElements()
+        emailTextField.delegate = self
+        senhaTextField.delegate = self
+        
+        
         self.addSubview(imageLogin)
         self.addSubview(imageLabel)
         self.addSubview(emailTextField)
@@ -96,16 +98,30 @@ class LoginView: UIView {
         
         ])
     }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+ 
+    @objc
+    private func registerTap(){
+        onRegisterTap?()
     }
     
+    @objc
+    private func loginTap(){
+        onLoginTap?()
+    }
 }
-@objc
-private func registerTap(){
-    onRegisterTap()
-}
-@objc
-private func loginTap(){
-    onLoginTap?()
+
+extension LoginView: UITextFieldDelegate {
+  
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == emailTextField {
+            self.senhaTextField.becomeFirstResponder()
+        
+    } else {
+        textField.resignFirstResponder()
+    }
+
+        return true
+    }
 }

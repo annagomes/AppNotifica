@@ -9,25 +9,24 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    //static = mesmo valor independente do objeto que está sendo criado
-    static var viewBackGroundColor: UIColor{
+    static var viewBackGroundColor: UIColor {
         UIColor(named: "viewBackGroundColor") ?? .white
     }
-    
-    static var labelColor: UIColor{
-        UIColor(named: "labelColor") ?? .gray
+    static var textLabelColor: UIColor {
+        UIColor(named: "textLabelColor") ?? .lightGray
     }
-    static var emailTextFieldColor: UIColor{
-            UIColor(named: "emailTextFieldColor") ?? .gray
-        }
-        static var senhaColor: UIColor{
-                UIColor(named: "senhaColor") ?? .gray
-            }
-            static var buttonLogar: UIColor{
-                UIColor(named: "buttonLogar") ?? .white
-            }
-                static var buttonRegistrar: UIColor{
-                    UIColor(named: "buttonRegistrar") ?? .white
-                    
-                }
-            }
+    
+    static var buttonBackGroundColor: UIColor {
+        UIColor(named: "buttonBackGroundColor") ?? .green
+    }
+    
+    static var textFieldBackGroundColor: UIColor {
+        UIColor(named: "textFieldBackGroundColor") ?? .white
+    }
+    
+    static var placeHolderColor: UIColor {
+        UIColor(named: "placeHolderColor") ?? .white
+    }
+
+    
+}

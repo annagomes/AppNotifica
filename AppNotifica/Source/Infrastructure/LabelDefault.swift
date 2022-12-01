@@ -8,22 +8,28 @@
 import Foundation
 import UIKit
 
-class LabelDefault: UILabel {
+class LabelDefault : UILabel{
     
-    init(imageLabel: String, font: UIFont ){
+    init(text: String, font: UIFont){
         super.init(frame: .zero)
-        initDefault(imageLabel: imageLabel, font: font)
+        initDefault(text: text, font: font)
+    }
+    
+   
+    
+    private func initDefault(text: String, font: UIFont){
+        self.text = text
+        self.textColor = .textLabelColor
+        self.font = font
+        self.adjustsFontSizeToFitWidth = true
+        self.numberOfLines = 0;
+        self.translatesAutoresizingMaskIntoConstraints = false
+    
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    private func initDefault (imageLabel: String, font: UIFont){
-        self.textColor = .labelColor
-        self.adjustsFontSizeToFitWidth = true
-        self.font = font
-        self.text = "Registre e gerencie as ocorrências do seu IF"
-        self.translatesAutoresizingMaskIntoConstraints = false
+        
     }
 }
 

@@ -1,26 +1,28 @@
 
-
 import Foundation
 import UIKit
 
-class HomeViewController: viewControllerDefault {
-    
+
+class HomeViewController: ViewControllerDefault {
+   
     lazy var homeView: HomeView = {
-        let homeView = homeView()
-    }
+        let homeView = HomeView()
+        
+        return homeView
+    }()
     
-    
-    var homeView: HomeView()
-    
-    override func loadView() {
+    override func loadView(){
         self.view = homeView
     }
-    override func viewDidLoad(){
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Home"
+        self.title = "Ocorrências"
     }
+    
 }
-//
+
 //  HomeViewController.swift
 //  AppNotifica
 //

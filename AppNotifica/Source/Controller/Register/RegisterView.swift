@@ -8,88 +8,128 @@
 import Foundation
 import UIKit
 
-class RegisterView: UIView {
-    //MARK: - Initialize
-    override init(frame: CGRect) {
-        //chama o frame da superclasse
-        super.init(frame: frame)
-        // muda a cor de fundo do app para branco
-        self.backgroundColor = .viewBackGroundColor
-        setupVisualElements()
-        
-    }
-    
+class RegisterView: ViewDefault {
+   
     var onLoginTap: (()->Void)?
+     
+   
+    var imageLabel = LabelDefault(text: "Entre com seu email e sua senha para se registrar", font: UIFont.systemFont(ofSize: 27, weight: .regular))
     
-    //cria a função com as propriadades da label no login
-    var imageLabel = LabelDefault(imageLabel:"Entre com seu e-mail e senha para registrar.", font: UIFont.systemFont(ofSize: 27, weight: .regular)),
-        self.numberOfLines = 0
+   
+    var emailTextField = TextFieldDefault (placeholder: "E-mail", keyBordType: .emailAddress, returnKeyType: .next)
     
-    //cria a função com as propriadades da text no login
-    var emailTextField = EmailDefault(email:"E-mail")
+
+    var senhaTextField : TextFieldDefault  = {
+        let text = TextFieldDefault(placeholder: "Senha", keyBordType: .emailAddress, returnKeyType: .next)
+        
+        text.isSecureTextEntry = true;
+        
+        return text
+         }()
     
-    //cria a função com as propriadades da text no login
-    var senhaTextField = SenhaDefault(senha:"Senha")
+
+    var confirmaSenhaTextField : TextFieldDefault  = {
+        let text = TextFieldDefault(placeholder: "Confirme sua Senha", keyBordType: .emailAddress, returnKeyType: .done)
+        
+        text.isSecureTextEntry = true;
+        
+        return text
+         }()
     
-    var ConfirmarSenhaTextField = SenhaDefault(senha:" Confirme sua senha")
-    
-    //cria a função com as propriadades do botão registrar
-    var buttonRegistrar = ButtonDefault(botao: "Registrar")
+
+    var buttonRegistrar = ButtonDefault(botao: "REGISTRAR")
     
     //cria a função com as propriadades da butao no logor
-    var buttonLogar = ButtonDefault(botao:"Logar")
+    var buttonLogar = ButtonDefault(botao: "LOGAR")
     
+   
+        
     
-    
-    
-    func setupVisualElements() {
+    override func setupVisualElements() {
+        super.setupVisualElements()
+        emailTextField.delegate = self
+        senhaTextField.delegate = self
+        confirmaSenhaTextField.delegate = self
+        
         self.addSubview(imageLabel)
         self.addSubview(emailTextField)
-        self.addSubview(ConfirmarSenhaTextField)
-        self.addSubview(buttonLogar)
+        self.addSubview(senhaTextField)
+        self.addSubview(confirmaSenhaTextField)
         self.addSubview(buttonRegistrar)
+        self.addSubview(buttonLogar)
+        
+        buttonLogar.addTarget(self, action: #selector(loginTap), for: .touchUpInside)
+        
         
         NSLayoutConstraint.activate([
+        
             
-            
-            imageLabel.widthAnchor.constraint(equalToConstant: 100),
-            imageLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            imageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 25),
+            imageLabel.widthAnchor.constraint(equalToConstant: 374),
+            imageLabel.heightAnchor.constraint(equalToConstant: 60),
+            imageLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 200),
+            imageLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5),
             imageLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             
             emailTextField.widthAnchor.constraint(equalToConstant: 374),
             emailTextField.heightAnchor.constraint(equalToConstant: 60),
-            emailTextField.topAnchor.constraint(equalTo: imageLabel.topAnchor, constant: 70),
+            emailTextField.topAnchor.constraint(equalTo: imageLabel.bottomAnchor, constant: 70),
             emailTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             emailTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             
-            ConfirmarSenhaTextField.widthAnchor.constraint(equalToConstant: 374),
-            ConfirmarSenhaTextField.heightAnchor.constraint(equalToConstant: 60),
-            ConfirmarSenhaTextField.topAnchor.constraint(equalTo: emailTextField.topAnchor, constant: 23),
-            ConfirmarSenhaTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
-            ConfirmarSenhaTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            senhaTextField.widthAnchor.constraint(equalToConstant: 374),
+            senhaTextField.heightAnchor.constraint(equalToConstant: 60),
+            senhaTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 23),
+            senhaTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            senhaTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             
+            confirmaSenhaTextField.widthAnchor.constraint(equalToConstant: 374),
+            confirmaSenhaTextField.heightAnchor.constraint(equalToConstant: 60),
+            confirmaSenhaTextField.topAnchor.constraint(equalTo: senhaTextField.bottomAnchor, constant: 23),
+            confirmaSenhaTextField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            confirmaSenhaTextField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            
+            
+
             buttonRegistrar.widthAnchor.constraint(equalToConstant: 374),
             buttonRegistrar.heightAnchor.constraint(equalToConstant: 60),
-            buttonRegistrar.topAnchor.constraint(equalTo: ConfirmarSenhaTextField.topAnchor, constant: 25),
+            buttonRegistrar.topAnchor.constraint(equalTo: confirmaSenhaTextField.bottomAnchor, constant: 25),
             buttonRegistrar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             buttonRegistrar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
             
-            
             buttonLogar.widthAnchor.constraint(equalToConstant: 374),
             buttonLogar.heightAnchor.constraint(equalToConstant: 60),
-            buttonLogar.topAnchor.constraint(equalTo: buttonRegistrar.topAnchor, constant: 25),
+            buttonLogar.topAnchor.constraint(equalTo: buttonRegistrar.bottomAnchor, constant: 25),
             buttonLogar.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
             buttonLogar.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
-            
+
+        
         ])
-    }
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     @objc
     private func loginTap(){
         onLoginTap?()
     }
+    
+    
 }
+
+extension RegisterView: UITextFieldDelegate {
+    
+        
+        
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            
+            if textField == emailTextField {
+                self.senhaTextField.becomeFirstResponder()
+                
+            } else if textField == senhaTextField {
+                self.confirmaSenhaTextField.becomeFirstResponder()
+                
+            } else {
+                textField.resignFirstResponder()
+            }
+            
+            return true
+        }
+    }

@@ -5,6 +5,7 @@
 //  Created by IFB BIOTIC 20 on 24/11/22.
 //
 
+
 import Foundation
 import UIKit
 
@@ -14,15 +15,17 @@ class HomeCoordinator: Coordinator {
     
     lazy var homeViewController: HomeViewController = {
         let viewController = HomeViewController()
+     
+        viewController.tabBarItem.title = "Home"
+        viewController.tabBarItem.image = UIImage(systemName: "homekit")
         return viewController
     }()
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
         
-        let viewController = HomeViewController()
-        self.navigationController.pushViewController(viewController, animated: true)
     }
-}
+    }

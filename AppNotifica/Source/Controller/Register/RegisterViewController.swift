@@ -6,18 +6,36 @@
 //
 
 import Foundation
+
+import Foundation
 import UIKit
 
-class RegisterViewController: viewControllerDefault {
+class RegisterViewController: ViewControllerDefault {
+   
     
-    var viewMain = RegisterView()
-    //override é sobrescrever, ou seja, já tem um jeito padrão de funcionar, mas deseja poder configurar isso
-    override func loadView() {
-        self.view = viewMain
-    }
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        //super se refere a classe-mãe (view controller), é uma maneira de aproveitar o código da classe-mãe e continuar editando mais códigos
+    var onLoginTap: (() -> Void)?
+    
+    
+    lazy var registerView: RegisterView = {
+        let registerView = RegisterView()
+         registerView.onLoginTap = {
+           self.onLoginTap?()
+       }
+       return registerView
+       
+    } ()
+    
+    
+       override func loadView(){
+           self.view = registerView
+       }
+       
+    
+       override func viewDidLoad() {
+           super.viewDidLoad()
         self.title = "Registrar"
-    }
+
+       }
+
 }
+

@@ -8,14 +8,17 @@
 import Foundation
 import UIKit
 
-class LoginViewController: viewControllerDefault {
+class LoginViewController: ViewControllerDefault {
+   
+    var onRegisterTap: (() -> Void)?
+    var onLoginTap: (() -> Void)?
     
-    var unRegisterTap: (() -> Void)?
     
-    var loginView: loginView = {
-        let loginView = loginView()
-        loginView.onregisterTap = {
-            self.loginView.onregisterTap?()
+    
+    lazy var loginView: LoginView = {
+        let loginView = LoginView()
+        loginView.onRegisterTap = {
+            self.onRegisterTap?()
         }
         
         loginView.onLoginTap = {
@@ -25,14 +28,17 @@ class LoginViewController: viewControllerDefault {
         return loginView
     }()
     
+       override func loadView(){
+           self.view = loginView
+       }
+       
   
-    override func loadView() {
-        self.view = loginView
-    }
-    override func viewDidLoad(){
-        super.viewDidLoad()
-        //super se refere a classe-mãe (view controller), é uma maneira de aproveitar o código da classe-mãe e continuar editando mais códigos
-        self.title = "Entrar"
-    }
+       override func viewDidLoad() {
+           super.viewDidLoad()
+        self.title = "Logar"
+    
+
+       }
+
 }
 
