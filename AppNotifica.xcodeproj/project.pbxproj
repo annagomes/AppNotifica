@@ -37,6 +37,7 @@
 		DD91F6F1292FA6AD00756969 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91F6F0292FA6AD00756969 /* HomeView.swift */; };
 		DD91F6F3292FA6BB00756969 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91F6F2292FA6BB00756969 /* HomeCoordinator.swift */; };
 		DD91F6F5292FB80A00756969 /* ViewControllerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD91F6F4292FB80A00756969 /* ViewControllerDefault.swift */; };
+		DDE554A7293F7A56001B547F /* EscolherImagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE554A6293F7A56001B547F /* EscolherImagem.swift */; };
 		DDFCABD8292666DF00BEE972 /* UIcolor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABD7292666DF00BEE972 /* UIcolor+.swift */; };
 		DDFCABDB2926717400BEE972 /* ButtonDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABDA2926717400BEE972 /* ButtonDefault.swift */; };
 		DDFCABDF292675C100BEE972 /* TextFieldDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDFCABDE292675C100BEE972 /* TextFieldDefault.swift */; };
@@ -96,6 +97,7 @@
 		DD91F6F0292FA6AD00756969 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		DD91F6F2292FA6BB00756969 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		DD91F6F4292FB80A00756969 /* ViewControllerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDefault.swift; sourceTree = "<group>"; };
+		DDE554A6293F7A56001B547F /* EscolherImagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EscolherImagem.swift; path = "../../../../../../../Downloads/AppNotifica-Video-10/AppNotifica/Source/Controller/NovaOcorrencia/EscolherImagem.swift"; sourceTree = "<group>"; };
 		DDFCABD7292666DF00BEE972 /* UIcolor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor+.swift"; sourceTree = "<group>"; };
 		DDFCABDA2926717400BEE972 /* ButtonDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDefault.swift; sourceTree = "<group>"; };
 		DDFCABDE292675C100BEE972 /* TextFieldDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDefault.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			children = (
 				DD5052E12938DE2F001F8E89 /* NovaOcorrnciaView.swift */,
 				DD5052E32938DE59001F8E89 /* NovaOcorrenciaController.swift */,
+				DDE554A6293F7A56001B547F /* EscolherImagem.swift */,
 			);
 			path = NovaOcorrencia;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				DD91F6EF292FA68600756969 /* HomeViewController.swift in Sources */,
 				DD610FC5291A8A4200B9D538 /* LoginCoordinator.swift in Sources */,
 				DDFCABE32926797300BEE972 /* ImageDefault.swift in Sources */,
+				DDE554A7293F7A56001B547F /* EscolherImagem.swift in Sources */,
 				DD5052EA2938DF07001F8E89 /* TabBarCoordinator.swift in Sources */,
 				DD5052E62938DE87001F8E89 /* SobreView.swift in Sources */,
 				41239E8F28F840EA00D92C31 /* ViewController.swift in Sources */,
